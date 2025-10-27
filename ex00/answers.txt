@@ -1,0 +1,6 @@
+1. [pip freeze]
+	This command generates a list of installed packages and their versions
+2. [pip show numpy]
+	NumPy is the fundamental package for scientific computing in Python. It is an open source Python library
+3. [pip uninstall numpy]
+4. [pip install numpy]
