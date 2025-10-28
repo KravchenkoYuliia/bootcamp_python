@@ -1,3 +1,7 @@
+import print_recipe_name
+import choose_recipe_name
+import delete_recipe_name
+import add_new_recipe
 cookbook = {
             "Sandwich": {
                     "ingredients": ["ham", "bread", "cheese", "tomatoes"],
@@ -16,46 +20,30 @@ cookbook = {
                     },
             }
 
-def print_recipe_names():
-    
-    print("\033[5m" + "All recipes in the cookbook:\n", "\033[25m")
-    
-    index = 1
-    for meal in cookbook:
-        print(str(index) + ".", meal)
-        index += 1
-    print("")
-
-def choose_recipe_name():
-
-    print("\033[45m" + "Choose one index" + "\033[0m")
-    recipe = input("")
-    print("")
-
-    if recipe == "1":
-        recipe_name = "Sandwich"
-    elif recipe == "2":
-        recipe_name = "Cake"
-    elif recipe == "3":
-        recipe_name = "Salad"
-    else:
-        print("Invalid index")
-        return
-
-    print("\033[4m" + "Ingredients:" + "\033[0m")
-    for ingredient in cookbook[recipe_name]["ingredients"]:
-        print(ingredient)
-    print("")
-    print("\033[4m" + "Meal:" + "\033[0m" + "\n" + cookbook[recipe_name]["meal"])
-    print("")
-    print("\033[4m" + "Preparation time:" + "\033[0m" + "\n" + cookbook[recipe_name]["prep_time"])
-
-
-
 def main():
-    print_recipe_names()
-    choose_recipe_name()
-    
+
+    print("Welcome to the Python Cookbook!\nList of available options:\n\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit\n")
+
+    while 1:
+        choice = input("\nPlease select an option: ")
+
+        if choice.isdigit() == False:
+            print("Invalid option")
+            print("List of available options:\n\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit\n")
+        elif int(choice) == 1:
+            add_new_recipe.add_new_recipe()
+        elif int(choice) == 2:
+            delete_recipe_name.delete_recipe_name()
+        elif int(choice) == 3:
+            choose_recipe_name.choose_recipe_name()
+        elif int(choice) == 4:
+            print_recipe_name.print_recipe_names()
+        elif int(choice) == 5:
+            print("By :)")
+            return
+        else:
+            print("Invalid option")
+            print("List of available options:\n\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit\n")
 
 if __name__=="__main__":
     main()
