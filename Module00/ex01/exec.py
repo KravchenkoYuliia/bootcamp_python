@@ -1,6 +1,17 @@
 import sys
 
 def main():
+
+    print(" ".join(sys.argv[1:])[::-1].swapcase())
+
+if __name__=="__main__":
+    main()
+
+
+
+
+    
+'''def main():
     args = sys.argv[1:]
     
     if len(args) == 0:
@@ -20,7 +31,4 @@ def main():
 
     print(string[::-1])
 
-    sys.exit()
-
-if __name__=="__main__":
-    main()
+    sys.exit()'''
